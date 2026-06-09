@@ -85,7 +85,7 @@ export const defaultConfig: SiteConfig = {
   personal: {
     name: '胡丙豪',
     title: 'AI产品经理',
-    subtitle: '欢迎来到我的数字空间',
+    subtitle: 'Welcome to my space',
     bio: '探索AI的边界，构建有价值的产品。',
     email: '952701694@qq.com',
     wechat: '13783721756',
@@ -96,7 +96,7 @@ export const defaultConfig: SiteConfig = {
   },
   terminal: {
     username: 'hubinghao',
-    hostname: '@macbook pro',
+    hostname: 'macbook pro',
     role: 'AI Product Manager',
     interests: [
       'Open Source',
@@ -114,24 +114,24 @@ export const defaultConfig: SiteConfig = {
   projects: [],
   timeline: [
     {
-      id: '1780993191321',
+      id: '1780993991964',
       date: '2024-05',
       title: '百度智能云-千帆-Agent策略产品经理',
-      description: 'DuMate & 千帆ModelBuilder & 千帆AppBuilder',
+      description: 'DuMate、千帆MaaS&PaaS',
       type: 'work',
     },
     {
-      id: '1780993145638',
+      id: '1780993963357',
       date: '2021-11',
       title: '小米汽车-自动驾驶-基础模型策略产品经理',
-      description: '感知方向-数据闭环业务',
+      description: '感知基础模型、数据闭环',
       type: 'work',
     },
     {
-      id: '1780993115095',
+      id: '1780993940644',
       date: '2021-05',
       title: '好未来-学而思网校-产品经理',
-      description: '直播互动、AI玩法相关',
+      description: '直播玩法、AI互动',
       type: 'work',
     },
   ],
