@@ -42,10 +42,17 @@ export function QuickNav() {
     }
   };
 
+  // 根据可见 tab 数量自适应列数（2 个时各占 1/2，3 个 1/3，4 个 1/4）
+  const colsClass =
+    navItems.length === 1 ? 'grid-cols-1' :
+    navItems.length === 2 ? 'grid-cols-2' :
+    navItems.length === 3 ? 'grid-cols-2 lg:grid-cols-3' :
+    'grid-cols-2 lg:grid-cols-4';
+
   return (
     <section className="py-16 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className={`grid ${colsClass} gap-4`}>
           {navItems.map((item) => {
             const Icon = item.icon;
             return (

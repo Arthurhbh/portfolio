@@ -2,6 +2,18 @@ import { useState, useEffect } from 'react';
 import { useConfig } from '@/hooks/useConfig';
 import { Home, Rss, FolderGit2, Clock, User, Terminal } from 'lucide-react';
 
+// 管理员密码的 SHA-256 哈希（原始密码不出现在代码/打包文件里）
+const ADMIN_PASSWORD_HASH = '7618f66753db7ec069c83ed8c197708e1402396774f60961065addd678933871';
+
+// 用浏览器原生 Web Crypto 计算 SHA-256，返回十六进制字符串
+async function sha256Hex(text: string): Promise<string> {
+  const data = new TextEncoder().encode(text);
+  const buffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(buffer))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
 export function Navbar() {
   const { config, isAdmin, setIsAdmin } = useConfig();
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -46,9 +58,10 @@ export function Navbar() {
     }
   };
 
-  const handleAdminLogin = () => {
-    // Simple password protection - in production, use proper authentication
-    if (adminPassword === 'hbh6226228') {
+  const handleAdminLogin = async () => {
+    // 比对哈希，而非明文密码
+    const inputHash = await sha256Hex(adminPassword);
+    if (inputHash === ADMIN_PASSWORD_HASH) {
       setIsAdmin(true);
       setShowAdminLogin(false);
       setAdminPassword('');

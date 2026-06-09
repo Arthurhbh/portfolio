@@ -288,6 +288,36 @@ export function AdminPanel() {
                       className="w-full px-4 py-2 bg-[#0d1117] border border-[#1e3a2f] rounded text-white text-sm focus:outline-none focus:border-[#00ff9d]"
                     />
                   </div>
+                  <div>
+                    <label className="block text-sm text-gray-400 mb-2">微信号</label>
+                    <input
+                      type="text"
+                      value={personalForm.wechat}
+                      onChange={(e) => setPersonalForm({ ...personalForm, wechat: e.target.value })}
+                      placeholder="留空则不显示"
+                      className="w-full px-4 py-2 bg-[#0d1117] border border-[#1e3a2f] rounded text-white text-sm focus:outline-none focus:border-[#00ff9d]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-400 mb-2">手机号</label>
+                    <input
+                      type="text"
+                      value={personalForm.phone}
+                      onChange={(e) => setPersonalForm({ ...personalForm, phone: e.target.value })}
+                      placeholder="留空则不显示"
+                      className="w-full px-4 py-2 bg-[#0d1117] border border-[#1e3a2f] rounded text-white text-sm focus:outline-none focus:border-[#00ff9d]"
+                    />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="block text-sm text-gray-400 mb-2">个人网站（About 里的网页图标指向）</label>
+                    <input
+                      type="url"
+                      value={personalForm.website}
+                      onChange={(e) => setPersonalForm({ ...personalForm, website: e.target.value })}
+                      placeholder="https://..."
+                      className="w-full px-4 py-2 bg-[#0d1117] border border-[#1e3a2f] rounded text-white text-sm focus:outline-none focus:border-[#00ff9d]"
+                    />
+                  </div>
                   <div className="sm:col-span-2">
                     <label className="block text-sm text-gray-400 mb-2">个人简介</label>
                     <textarea
@@ -793,6 +823,8 @@ export function AdminPanel() {
                           type: 'work',
                         });
                         showSaveMessage('事件已添加');
+                      } else {
+                        showSaveMessage('请先填写「事件标题」和「事件描述」');
                       }
                     }}
                     className="mt-4 btn-primary"

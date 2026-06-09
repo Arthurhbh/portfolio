@@ -92,21 +92,6 @@ export function About() {
             </div>
           </div>
         </div>
-
-        {/* Skills/Interests */}
-        <div className="mt-8 cyber-card p-6">
-          <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="text-[#00ff9d]">{'>'}</span>
-            <span>Interests & Skills</span>
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {config.terminal.interests.map((interest, index) => (
-              <span key={index} className="tag">
-                {interest}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

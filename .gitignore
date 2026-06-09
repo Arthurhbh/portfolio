@@ -36,3 +36,6 @@ pnpm-debug.log*
 portfolio-project.tar.gz
 zibJ5VZd
 *.tar.gz
+
+# 后台导出的配置草稿（本地备份用，不进仓库）
+portfolio-config-*.json
